@@ -4,12 +4,13 @@ import React, { FC } from 'react';
 import './App.css';
 // import InitiatePage from './views/Intiatie'; 
 import Home from './views/Home/Home';
+import Dashboard from './views/Dashboard/Dashboard';
 
 const App: FC = () => {
   return (
     <div>
-      {/* <InitiatePage /> */}
-      <Home />
+      {/* <Home /> */}
+      <Dashboard />
     </div>
   );
 }
