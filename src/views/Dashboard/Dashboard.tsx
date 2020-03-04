@@ -2,6 +2,7 @@ import React from 'react'
 import { NavigationBar } from '../../components/Navbar/Navbar'
 import shard from '../../helpers/shard'
 import '../../App.css'
+import DataDummy from '../../helpers/dummy'
 
 const { Col, Row, Card, CardBody, CardHeader, CardTitle, FormRadio } = shard
 
@@ -29,19 +30,23 @@ function Dashboard() {
                         </CardBody>
                     </Card>
                 </Col>
-                <Col style={{ marginLeft: '2%', marginTop: '5%', maxWidth: '70%' }}>
-                    <Card>
-                        <CardHeader>Content</CardHeader>
-                        <CardBody>
-                            <p>1. Leave Out</p>
-                            <p>2. Leave Out</p>
-                            <p>3. Leave Out</p>
-                            <p>4. Leave Out</p>
-                            <p>5. Leave Out</p>
-                            <p>6. Leave Out</p>
-                            <p>7. Leave Out</p>
-                        </CardBody>
-                    </Card>
+                <Col style={{ marginLeft: '2%', marginTop: '5%', maxWidth: '70%', maxHeight: '20%'}}>
+                    <Row>
+                        {
+                            DataDummy.map((val, index) => {
+                                return (
+                                    <Card key={val.id} style={{ margin: '2%' }}>
+                                        <CardHeader>Content</CardHeader>
+                                        <CardBody>
+                                            <img src={val.image} style={{ height: '300px', width:'200px' }}/>
+                                            <p>{val.price}</p>
+                                            <p>{val.ket}</p>
+                                        </CardBody>
+                                    </Card>
+                                )
+                            })
+                        }
+                    </Row>
                 </Col>
             </Row>
         </div>
